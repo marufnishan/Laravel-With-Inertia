@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -39,3 +40,4 @@ Route::middleware([
 //Route::inertia('/home', 'Home');
 
 Route::get('/home', [HomeController::class, 'index']);
+Route::resource('/posts', PostController::class);
