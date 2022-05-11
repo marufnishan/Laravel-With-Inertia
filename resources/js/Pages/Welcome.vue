@@ -39,6 +39,9 @@
               <Link href="/home" class="text-muted">
                 <button class="btn btn-primary m-3">Home</button>
               </Link>
+              <Link href="/posts" class="text-muted">
+                <button class="btn btn-success m-3">Posts</button>
+              </Link>
                 <div class="card-body border-right border-bottom p-3 h-100">
                   <div class="d-flex flex-row bd-highlight pt-2">
                     <div>
