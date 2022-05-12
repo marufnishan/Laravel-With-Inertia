@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="row in data">
+        <tr v-for="row in data.data">
           <td>{{ row.id }}</td>
           <td>{{ row.title }}</td>
           <td>{{ row.body }}</td>
@@ -42,6 +42,13 @@
         </tr>
       </tbody>
     </table>
+
+    
+  <ul class="pagination">
+    <li class="page-item"><Link  class="page-link" :href="data.prev_page_url">Previous</Link></li>
+    <li v-for="page,i in data.last_page" :key="i" class="page-item"><Link  class="page-link" :href="'/posts?page='+page">{{page}}</Link></li>
+    <li class="page-item"><Link class="page-link" :href="data.next_page_url">Next</Link></li>
+  </ul>
 
     <!-- Modal -->
     <div
@@ -126,7 +133,11 @@
   </div>
 </template>
 <script>
+import {Link } from '@inertiajs/inertia-vue3';
 export default {
+  components: {
+    Link,
+  },
   props: ["data", "errors"],
   data() {
     return {
